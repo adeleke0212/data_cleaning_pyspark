@@ -3,4 +3,29 @@ Rheeza Clinics & Pharmaceuticals conducted a research on Naproxen - a drug that 
 
 Tools
 Initial Schema
-root |-- ageofparticipant: long (nullable = true) |-- clinician: struct (nullable = true) | |-- branch: string (nullable = true) | |-- name: string (nullable = true) | |-- role: string (nullable = true) |-- drug_used: string (nullable = true) |-- experimentenddate: string (nullable = true) |-- experimentstartdate: string (nullable = true) |-- noofhourspassedatfirstreaction: long (nullable = true) |-- result: struct (nullable = true) | |-- conclusion: string (nullable = true) | |-- sideeffectsonparticipant: string (nullable = true)
+root
+|-- ageofparticipant: long (nullable = true)
+|-- clinician: struct (nullable = true)
+| |-- branch: string (nullable = true)
+| |-- name: string (nullable = true)
+| |-- role: string (nullable = true)
+|-- drug_used: string (nullable = true)
+|-- experimentenddate: string (nullable = true)
+|-- experimentstartdate: string (nullable = true)
+|-- noofhourspassedatfirstreaction: long (nullable = true)
+|-- result: struct (nullable = true)
+| |-- conclusion: string (nullable = true)
+| |-- sideeffectsonparticipant: string (nullable = true)
+
+flattened dataset schema
+root
+|-- age_of_participant: long (nullable = true)
+|-- clinic_branch: string (nullable = true)
+|-- head_clinician: string (nullable = true)
+|-- assistants_role: string (nullable = false)
+|-- drug_used: string (nullable = true)
+|-- experiment_end_date: string (nullable = true)
+|-- experiment_start_date: string (nullable = true)
+|-- hours_passed_at_first_reaction: long (nullable = true)
+|-- conclusion: string (nullable = false)
+|-- observed_side_effect: string (nullable = true)
